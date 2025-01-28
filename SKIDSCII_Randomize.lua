@@ -1,0 +1,1 @@
+local template = io.open("SKIDSCII_Dictionary.skid", "r")
