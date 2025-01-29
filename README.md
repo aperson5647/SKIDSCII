@@ -5,7 +5,7 @@
 
 At its core, *SKIDSCII* is a randomized language, as in nobody's dictionary is the same. For one user, 'Apple' might be assigned the value 95, while for another user, it could be assigned 21. It generates unpredictable sequences, making the code much harder to crack without the correct dictionary. With its ability to handle different languages, symbols, and formats, *SKIDSCII* is both versatile and future-proof.
 
-<sub>* *Note: This has not been extensively tested, but it is designed to be difficult to crack in theory.*</sub>
+<sub>* *Note: This has not been extensively tested, but it is designed to be difficult to crack in theory. I would recommend testing before using.*</sub>
 
 ### Features:
 * **Expandable:** Add whatever phrase you want to the *SKIDSCII* dictionary.
@@ -14,8 +14,28 @@ At its core, *SKIDSCII* is a randomized language, as in nobody's dictionary is t
 
 ## **WHY USE** ***SKIDSCII***?
 * **Single Dependency:** *SKIDSCII*'s only dependency is [**Luvit**](https://luvit.io/) due to its built-in I/O capabilities. As a result, it may not run properly on other Lua environments without additional adjustments or extensions. It is recommended to use Luvit to ensure full compatibility with *SKIDSCII*.
-* **Unique Approach:** *SKIDSCII* **does not** rely on traditional encryption algorithms, instead *SKIDSCII* uses a randomized language which assigns each line in `SKIDSCII_Template.txt` to a random number in `SKIDSCII_Dictionary.txt` which lets *SKIDSCII* know that said random number *actually* means something.
+* **Unique Approach:** *SKIDSCII* **does not** rely on traditional encryption algorithms, instead *SKIDSCII* uses a randomized language which assigns each line in `SKIDSCII_Template.txt` to a random number in `SKIDSCII_Dictionary.txt` which lets *SKIDSCII* know that said random number *actually* means something. If someone tries to decode *SKIDSCII* without *your* dictionary, they will be met with errors and gibberish.
+* 
+```
+### Partially rewritten manually after obfuscation with *SKIDSCII*:
+Once you generate a new dictionary with `SKIDSCII` and re-write the script
+```lua
+local discordia = require('discordia')
+local client = discordia.Client()
 
+client:on('ready', function()
+	print('Logged in as '.. client.user.username)
+end)
+
+client:on('messageCreate', function(message)
+	if message.content == '!ping' then
+		message.channel:send('Pong!')
+	end
+end)
+
+client:run('Bot INSERT_TOKEN_HERE')
+```
+ 
 ## **HOW DO I USE** ***SKIDSCII***?
 ### **1. Install Luvit**
 * *SKIDSCII* is specifically designed to work with [**Luvit**](https://luvit.io/), a lightweight Lua runtime that includes built-in extensions like I/O, which are necessary for *SKIDSCII* to run properly.
