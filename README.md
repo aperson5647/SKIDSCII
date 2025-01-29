@@ -11,8 +11,6 @@ Features:
 * Allows code to function as usual while being visually obfuscated and unintelligable to all who do not have access to your copy of the *SKIDSCII* dictionary.
 
 ## **WHY USE** ***SKIDSCII***?
-* No Backdoor Risk: Due to the procedural nature of *SKIDSCII*, there’s no way to add a backdoor (As far as I know). The randomness of the code generation ensures that it’s fundamentally impossible for anyone to inject malicious code without completely altering the logic behind it.
-* Future-Proof: Because *SKIDSCII* is a procedural language offline, it doesn’t rely on outdated encryption algorithms, static keys or servers. This makes it adaptable and resistant to changes in future tech, keeping it secure for the long term.
 * Minimal dependencies: *SKIDSCII*'s only dependency is [**Luvit**](https://luvit.io/) due it it's built-in I/O capabilities. As a result, it may not run properly on other Lua environments without additional adjustments or extensions. It is recommended to use Luvit to ensure full compatibility with SKIDSCII.
 
 ## **HOW DO I USE** ***SKIDSCII***?
