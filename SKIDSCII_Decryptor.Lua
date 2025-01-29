@@ -41,7 +41,7 @@ local function translate(input)
     return output
 end
 
-local data = io.open("SkidphabetTEST.skid", "r") -- used for testing right now
+local data = io.open("input.txt", "r") -- used for testing right now
 
 if data then
     local content = data:read("a")
