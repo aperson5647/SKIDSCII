@@ -11,7 +11,7 @@ Dictionary = io.open("SKIDSCII_Dictionary.txt", "w+")
 for line in Template:lines() do
     local randomNum = math.random(0,100)
 
-    Output = ("["..randomNum.."]".." = "..[["]]..line..[["]])
+    Output = ("["..[["]]..randomNum..[["]].."]".." = "..[["]]..line..[["]])
     Dictionary:write(Output, "\n")
 end
 
