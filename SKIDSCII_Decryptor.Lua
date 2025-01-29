@@ -1,4 +1,11 @@
-local SKIDSCII = require("PROCEDURAL_SKIDSCII_Dictionary")
+local SKIDSCII = {}
+
+for line in io.lines("SKIDSCII_Dictionary.txt") do
+    local key, value = line:match('%["(.-)"%]%s*=%s*"(.-)"')
+    if key and value then
+        SKIDSCII[key] = value
+    end
+end
 
 local function translate(input)
     local output = ""
@@ -34,7 +41,6 @@ local function translate(input)
     return output
 end
 
-
 local data = io.open("SkidphabetTEST.skid", "r") -- used for testing right now
 
 if data then
@@ -49,6 +55,12 @@ else
 end
 
 -- damn the skids
+
+-- Copyright (c) 2025 aperson5647
+-- Released under the MIT License
+-- https://opensource.org/licenses/MIT
+
+
 
 
 

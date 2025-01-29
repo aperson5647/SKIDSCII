@@ -1,14 +1,19 @@
 -- DOES NOTHING RIGHT NOW!!!
+local http = require('http') -- DOES ABSOLUTELY NOTHING, WORKING ON MAKING APIs WORK
 
-io = require("io")
+OldDictionary = io.open("SKIDSCII_Dictionary.txt", "w")
+OldDictionary:write("")
+OldDictionary:close()
 
-local template = io.open("SKIDSCII_Template.txt", "r")
+Template = io.open("SKIDSCII_Template.txt", "r")
+Dictionary = io.open("SKIDSCII_Dictionary.txt", "w+")
 
-if template then
-    local tempDATA = template:read("a")
-    template:close()
+for line in Template:lines() do
+    local randomNum = math.random(0,100)
 
-    print(tempDATA)
+    Output = ("["..randomNum.."]".." = "..[["]]..line..[["]])
+    Dictionary:write(Output, "\n")
 end
 
--- randomly assign each line to random spot in dictionary
+Template:close()
+Dictionary:close()
